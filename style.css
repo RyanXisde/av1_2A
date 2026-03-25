@@ -29,7 +29,6 @@ body {
     padding: 20px;
 }
 
-/* Produtos em cards */
 .mano {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -102,7 +101,6 @@ body {
     font-size: 14px;
 }
 
-/* Responsividade */
 @media only screen and (max-width: 850px) {
     body {
         grid-template-areas: 
