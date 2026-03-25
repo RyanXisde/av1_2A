@@ -10,12 +10,13 @@ body {
     gap: 10px;
     font-family: Arial, sans-serif;
     margin: 0;
+    min-height: 100vh;
 }
 
 /* Header */
 .seila0 {
     grid-area: seila0;
-    background-color: rgb(224, 248, 5);
+    background-color: rgb(37, 228, 170);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +27,53 @@ body {
     grid-area: seila1;
     background-color: aqua;
     padding: 20px;
+}
+
+/* Produtos em cards */
+.mano {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 5px; 
+    margin-top: 20px;
+}
+
+.divv {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 250px; 
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.divv img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.divv h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.divv p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.divv:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 /* Aside */
@@ -39,6 +87,7 @@ body {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    min-height: 200px; 
 }
 
 /* Footer */
@@ -49,43 +98,8 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-}
-
-/* Produtos em cards */
-.mano {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.divv {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     padding: 10px;
-    width: 150px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.divv img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.divv h3 {
-    margin: 10px 0 5px;
-}
-
-.divv p {
-    margin: 0;
-    font-weight: bold;
-}
-
-.divv:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    font-size: 14px;
 }
 
 /* Responsividade */
@@ -99,15 +113,19 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
-    
-    .mano {
-        justify-content: center;
+
+    .seila1 {
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
 @media only screen and (max-width: 450px) {
     .seila2 {
         display: none;
+    }
+
+    .seila1 {
+        grid-template-columns: 1fr; 
     }
 
     .divv {
